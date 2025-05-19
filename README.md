@@ -21,50 +21,47 @@ Neste jogo, o objetivo é controlar a cobra e comer a comida que aparece na tela
 
    ```bash
    pip install pygame
-Execute o jogo no seu terminal ou no VSCode:
 
-bash
-Copiar
-Editar
-python jogo_da_cobrinha.py
 No menu principal, escolha uma das opções:
 
-Jogar: Comece a jogar o jogo da cobrinha! 🐍
+**Jogar:** Comece a jogar o jogo da cobrinha! 🐍
 
-Sobre: Veja mais informações sobre o jogo.
+**Sobre:** Veja mais informações sobre o jogo.
 
-Sair: Sai do jogo. 🚪
+**Sair:** Sai do jogo. 🚪
 
 Controles:
 
-Seta para cima: Move a cobra para cima.
+**Seta para cima:** Move a cobra para cima.
 
-Seta para baixo: Move a cobra para baixo.
+**Seta para baixo:** Move a cobra para baixo.
 
-Seta para a esquerda: Move a cobra para a esquerda.
+**Seta para a esquerda:** Move a cobra para a esquerda.
 
-Seta para a direita: Move a cobra para a direita.
+**Seta para a direita:** Move a cobra para a direita.
 
-ESC: Volta ao menu ou encerra o jogo quando estiver em "Game Over".
+**ESC:** Volta ao menu ou encerra o jogo quando estiver em "Game Over".
 
 🎮 Como Funciona
-Menu Inicial
+
+**Menu Inicial**
+
 Quando o jogo começa, você verá o menu principal com as seguintes opções:
 
-Jogar: Comece a partida.
+**Jogar:** Comece a partida.
 
-Sobre: Saiba mais sobre o jogo.
+**Sobre:** Saiba mais sobre o jogo.
 
-Sair: Encerre o jogo.
+**Sair:** Encerre o jogo.
 
-Jogo da Cobrinha
+**Jogo da Cobrinha**
 Durante o jogo, você controlará uma cobra que começa com um tamanho pequeno. O objetivo é comer as "comidas" vermelhas que aparecem na tela, fazendo a cobra crescer. 🐍🍎
 
-Colisão com paredes ou corpo: Se a cobra colidir com as bordas da tela ou com seu próprio corpo, o jogo termina e aparece a tela de Game Over.
+**Colisão com paredes ou corpo:** Se a cobra colidir com as bordas da tela ou com seu próprio corpo, o jogo termina e aparece a tela de Game Over.
 
-Pontuação: Sua pontuação aumenta a cada comida que a cobra come.
+**Pontuação:** Sua pontuação aumenta a cada comida que a cobra come.
 
-Tela de Game Over
+**Tela de Game Over**
 Quando o jogo terminar, você verá:
 
 A mensagem "Game Over!".
