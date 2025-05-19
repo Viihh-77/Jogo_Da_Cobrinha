@@ -10,15 +10,14 @@ pygame.display.set_caption('Tela Inicial - Meu Jogo')
 mainClock = pygame.time.Clock()
 cenario = pygame.image.load('fundoo.jpg')
 
-# Cores ajustadas para se destacar no fundo verde da selva
-BACKGROUND_COLOR = (0, 100, 0)  # Fundo verde escuro (selva)
-BUTTON_COLOR = (255, 100, 100)  # Botões em vermelho forte
-BUTTON_HOVER_COLOR = (255, 150, 150)  # Cor do botão ao passar o mouse (vermelho mais claro)
-TEXT_COLOR = (255, 255, 255)  # Texto em branco
-HIGHLIGHT_COLOR = (255, 255, 0)  # Cor de destaque em amarelo vibrante
-SNAKE_COLOR = (255, 69, 0)  # Cobra em laranja forte (fica bem visível no verde)
-FOOD_COLOR = (255, 0, 0)  # Cor da comida em vermelho bem forte
-TITLE_COLOR = (255, 255, 255)  # Cor do texto "Meu Jogo" em branco para contraste
+BACKGROUND_COLOR = (0, 100, 0)
+BUTTON_COLOR = (255, 100, 100)
+BUTTON_HOVER_COLOR = (255, 150, 150)
+TEXT_COLOR = (255, 255, 255)
+HIGHLIGHT_COLOR = (255, 255, 0)
+SNAKE_COLOR = (255, 69, 0)
+FOOD_COLOR = (255, 0, 0)
+TITLE_COLOR = (255, 255, 255)
 
 BLOCK_SIZE = 20
 
@@ -59,8 +58,6 @@ def start_game():
 
     while running:
         screen.fill(BACKGROUND_COLOR)
-
-        # Desenhar o fundo
         screen.blit(cenario, (0, 0))
 
         for event in pygame.event.get():
@@ -115,8 +112,6 @@ def start_game():
 def main_menu():
     while True:
         screen.fill(BACKGROUND_COLOR)
-
-        # Desenhar o fundo
         screen.blit(cenario, (0, 0))
 
         draw_text('Meu Jogo', font, TITLE_COLOR, screen, 400, 80, letter_spacing=10)
@@ -145,8 +140,6 @@ def about():
     running = True
     while running:
         screen.fill(BACKGROUND_COLOR)
-
-        # Desenhar o fundo
         screen.blit(cenario, (0, 0))
 
         draw_text('Sobre o Jogo', font, HIGHLIGHT_COLOR, screen, 400, 80)
