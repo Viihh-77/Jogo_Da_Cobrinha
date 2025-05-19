@@ -40,9 +40,13 @@ No menu principal, escolha:
 
 🎮 Controles do Jogo:
 🔼 Seta para cima → Move a cobra para cima
+
 🔽 Seta para baixo → Move a cobra para baixo
+
 ◀️ Seta para a esquerda → Move a cobra para a esquerda
+
 ▶️ Seta para a direita → Move a cobra para a direita
+
 ⎋ ESC → Volta ao menu ou encerra o jogo
 
 🧠 Como Funciona
@@ -59,16 +63,6 @@ Ao perder:
 Você verá a mensagem "Game Over!"
 
 Poderá voltar ao menu pressionando ESC
-
-🌟 Tecnologias Utilizadas
-🐍 Python – Linguagem de programação
-
-🎮 Pygame – Biblioteca para desenvolvimento de jogos
-
-🖼️ fundoo.jpg – Imagem de fundo personalizada
-
-📸 Captura de Tela
-Adicione aqui uma imagem chamada screenshot.png para mostrar o jogo em funcionamento!
 
 bash
 Copiar
