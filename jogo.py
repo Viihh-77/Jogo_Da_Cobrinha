@@ -4,11 +4,17 @@ import random
 from pygame.locals import *
 
 pygame.init()
+pygame.mixer.init()
+
+som_comer = pygame.mixer.Sound('cheezburguer.wav')
+som_explosao = pygame.mixer.Sound('explosão.wav')
+
+pygame.mixer.music.load('tema repo.wav')
+pygame.mixer.music.play(-1)
 
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption('Tela Inicial - Meu Jogo')
 mainClock = pygame.time.Clock()
-cenario = pygame.image.load('fundoo.jpg')
 
 BACKGROUND_COLOR = (0, 100, 0)
 BUTTON_COLOR = (255, 100, 100)
@@ -21,16 +27,16 @@ TITLE_COLOR = (255, 255, 255)
 
 BLOCK_SIZE = 20
 
+cenario = pygame.image.load('fundoo.jpg')
+cenario = pygame.transform.scale(cenario, (800, 600))
+
 font = pygame.font.SysFont('Arial', 80, bold=True)
 small_font = pygame.font.SysFont('Arial', 30)
 
-def draw_text(text, font, color, surface, x, y, letter_spacing=5):
-    words = text.split(' ')
-    x_offset = x - (font.size(text)[0] // 2)
-    for word in words:
-        word_surface = font.render(word, True, color)
-        surface.blit(word_surface, (x_offset, y))
-        x_offset += word_surface.get_width() + letter_spacing
+def draw_text(text, font, color, surface, x, y):
+    text_surface = font.render(text, True, color)
+    text_rect = text_surface.get_rect(center=(x, y))
+    surface.blit(text_surface, text_rect)
 
 def draw_button(text, surface, x, y, w, h, color, hover_color):
     mx, my = pygame.mouse.get_pos()
@@ -80,6 +86,7 @@ def start_game():
         snake = [head] + snake[:-1]
 
         if head == food:
+            som_comer.play()
             snake.append(snake[-1])
             food = (
                 random.randint(0, (800 - BLOCK_SIZE) // BLOCK_SIZE) * BLOCK_SIZE,
@@ -87,11 +94,10 @@ def start_game():
             )
             score += 1
 
-        if (
-            head in snake[1:] or
+        if (head in snake[1:] or
             head[0] < 0 or head[0] >= 800 or
-            head[1] < 0 or head[1] >= 600
-        ):
+            head[1] < 0 or head[1] >= 600):
+            som_explosao.play()
             draw_text("Game Over!", font, (255, 0, 0), screen, 400, 200)
             draw_text("Pressione ESC para voltar", small_font, TEXT_COLOR, screen, 400, 300)
             pygame.display.update()
@@ -114,7 +120,7 @@ def main_menu():
         screen.fill(BACKGROUND_COLOR)
         screen.blit(cenario, (0, 0))
 
-        draw_text('Meu Jogo', font, TITLE_COLOR, screen, 400, 80, letter_spacing=10)
+        draw_text('Meu Jogo', font, TITLE_COLOR, screen, 400, 80)
 
         play_button = draw_button("Jogar", screen, 300, 250, 200, 50, BUTTON_COLOR, BUTTON_HOVER_COLOR)
         about_button = draw_button("Sobre", screen, 300, 350, 200, 50, BUTTON_COLOR, BUTTON_HOVER_COLOR)
